@@ -17,6 +17,7 @@
   import HeaderVersion from './HeaderVersion'
 
   export default {
+    name: 'page-header',
     props: ['dblclick', 'weather'],
     components: {
       HeaderVersion
