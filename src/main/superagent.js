@@ -1,4 +1,3 @@
-const request = require('request')
 const superagent = require('superagent')
 const superagentCharset = require('superagent-charset')(superagent)
 
@@ -32,23 +31,5 @@ export function superagentForm ({url, method, charset1 = 'utf-8', params, data, 
         }
         resolve(response)
       })
-  })
-}
-
-export function httpRequest (url, method) {
-  return new Promise(function (resolve, reject) {
-    request({
-      url,
-      method
-    }, (error, response, body) => {
-      if (!error && response.statusCode === 200) {
-        resolve(body)
-      } else {
-        reject(new Error({
-          code: 10000,
-          data: null
-        }))
-      }
-    })
   })
 }
