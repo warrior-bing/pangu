@@ -3,6 +3,7 @@
 import { app, BrowserWindow } from 'electron'
 import { getOne, getWeather, getMedia } from './service/crawler'
 import * as menu from './menu'
+import checkVersion from './updateCheck'
 
 /**
  * Set `__static` path to static files in production
@@ -44,6 +45,7 @@ function createWindow () {
 app.on('ready', () => {
   createWindow()
   menu.init()
+  checkVersion()
 })
 
 app.on('window-all-closed', () => {

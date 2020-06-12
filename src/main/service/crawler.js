@@ -1,4 +1,4 @@
-import { httpRequest, superagentReq, superagentForm } from '../superagent'
+import { superagentReq, superagentForm } from '../superagent'
 import { encodeURIComponentGBK } from '../utils'
 const config = require('../config')
 const cheerio = require('cheerio')
@@ -14,8 +14,8 @@ const avatarArr = [
 
 export async function getOne () { // 获取每日一句
   try {
-    let text = await httpRequest(config.APP.ONE, 'GET')
-    let $ = cheerio.load(text)
+    let res = await superagentReq(config.APP.ONE, 'GET')
+    let $ = cheerio.load(res.text)
     let todayOneList = $('#carousel-one .carousel-inner .item')
     let todayOne = $(todayOneList[0]).find('.fp-one-cita').text().replace(/(^\s*)|(\s*$)/g, '')
     return todayOne
@@ -27,8 +27,8 @@ export async function getOne () { // 获取每日一句
 
 export async function getWeather () {
   let url = config.APP.MOJI_HOST + config.APP.CITY + '/' + config.APP.LOCATION
-  let text = await httpRequest(url, 'GET')
-  let $ = cheerio.load(text)
+  let res = await superagentReq(url, 'GET')
+  let $ = cheerio.load(res.text)
   let weatherTips = $('.wea_tips em').text()
   const today = $('.forecast .days').first().find('li')
   let todayInfo = {

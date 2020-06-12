@@ -1,6 +1,6 @@
 {
   "name": "pangu",
-  "version": "2.0.0",
+  "version": "1.9.0",
   "author": "冰哥 <zhangbing0039@163.com>",
   "description": "An electron-vue project",
   "license": "MIT",
@@ -86,6 +86,7 @@
     "electron-builder": "^21.2.0",
     "electron-debug": "^1.5.0",
     "electron-devtools-installer": "^2.2.4",
+    "electron-settings": "^3.2.0",
     "eslint": "^4.19.1",
     "eslint-config-standard": "^11.0.0",
     "eslint-friendly-formatter": "^4.0.1",

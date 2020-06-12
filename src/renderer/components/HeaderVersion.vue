@@ -11,10 +11,11 @@
 </template>
 
 <script>
+  import pkg from '../../../package.json'
   export default {
     data () {
       return {
-        version: '2.0.0',
+        version: pkg.version,
         appName: '盘古电影'
       }
     },

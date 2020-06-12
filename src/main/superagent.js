@@ -18,7 +18,7 @@ export function superagentReq (url, method, charset1 = 'utf-8', params, data, co
   })
 }
 
-// 请求
+// form请求
 export function superagentForm ({url, method, charset1 = 'utf-8', params, data, cookies}) {
   return new Promise(function (resolve, reject) {
     superagentCharset(method, url)
